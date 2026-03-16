@@ -1,5 +1,5 @@
 import Image from "next/image";
-import FirstComponent from "@/app/react/screen/page";
+import FirstComponent from "@/app/react/appbars/page";
 
 export default function Home() {
   return (
