@@ -1,5 +1,7 @@
 import Link from "next/link";
 import lizard from "../assets/images/lizard.webp";
+import { FaBackwardStep, FaForwardStep, FaPlay } from "react-icons/fa6";
+
 export default function OutlineCard() {
   return (
     <div className="p-4 border border-gray-300 rounded max-w-3xs mx-auto ">
@@ -49,6 +51,35 @@ export function MediaCard() {
           </Link>
         </div>
       </div>
+    </div>
+  );
+}
+
+// UI Controls card
+export function UIControlsCard() {
+  return (
+    <div className="flex max-w-sm mx-auto  rounded drop-shadow-lg shadow-lg shadow-gray-300  justify-between items-center ">
+      <div className=" px-5 pt-5 pb-5 h-40">
+        <h2 className="text-2xl ">Live From Space</h2>
+        <p className="text-gray-500">Mac Miller</p>
+        <div className="mt-8  flex space-x-4 items-center justify-center text-gray-600 text-2xl">
+          <button className="hover:bg-gray-300 p-2 rounded-full">
+            <FaBackwardStep />
+          </button>
+          <button className="hover:bg-gray-300 p-2 rounded-full">
+            <FaPlay />
+          </button>
+          <button className="hover:bg-gray-300 p-2 rounded-full">
+            <FaForwardStep />
+          </button>
+        </div>
+      </div>
+
+      <img
+        src="https://mui.com/static/images/cards/live-from-space.jpg"
+        alt="image"
+        className=" size-40 object-cover rounded-r"
+      />
     </div>
   );
 }

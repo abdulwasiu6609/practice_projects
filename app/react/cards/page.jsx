@@ -1,4 +1,4 @@
-import OutlineCard, { MediaCard } from "@/app/uicomponents/cards";
+import OutlineCard, { MediaCard, UIControlsCard } from "@/app/uicomponents/cards";
 
 export default function CardsPage() {
   return (
@@ -9,6 +9,9 @@ export default function CardsPage() {
       <br />
       <h2 className="text-center text-2xl font-black">Media card</h2>
       <MediaCard />
+      <br />
+      <h2 className="text-center text-2xl font-black">UI Controls card</h2>
+      <UIControlsCard />
     </div>
   );
 }
