@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 export default function EventHandlers() {
   function handleClick() {
     alert(`1 + 2 = ${1 + 2} => the miracle has been performed`);
@@ -93,6 +95,9 @@ export default function EventHandlers() {
       </div>
       <h2 className="font-bold text-xl">Preventing default behavior</h2>
       <Signup />
+
+      <h2 className="font-bold text-xl">Color Switch</h2>
+      <ColorSwitch />
     </div>
   );
 }
@@ -127,5 +132,40 @@ export function Signup() {
       <input className="border" />
       <button>Send</button>
     </form>
+  );
+}
+
+function ColorSwitch() {
+  const [index, setIndex] = useState(0);
+  const colors = [
+    "green",
+    "yellow",
+    "red",
+    "blue",
+    "orange",
+    "gray",
+    "indigo",
+  ];
+
+  function getIndex() {
+    if (index < colors.length) {
+      setIndex(index + 1);
+    } else {
+      setIndex(0);
+    }
+  }
+
+  return (
+    <div
+      className={`w-full  bg-${colors[index]}-700   flex flex-col items-center gap-2 p-4 mb-4 text-white`}
+    >
+      <button
+        onClick={getIndex}
+        className="bg-gray-300 text-gray-900 p-2 rounded hover:bg-gray-400 "
+      >
+        Change color
+      </button>
+      <p className="font-bold text-2xl">Clicks on the page: {index}</p>
+    </div>
   );
 }
